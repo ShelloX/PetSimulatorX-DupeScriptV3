@@ -20,6 +20,7 @@ DupeLoading.Name = "DupeLoading"
 DupeLoading.Parent = game.CoreGui
 DupeLoading.ResetOnSpawn = false
 
+
 Background.Name = "Background"
 Background.Parent = DupeLoading
 Background.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
@@ -27,8 +28,6 @@ Background.BorderColor3 = Color3.fromRGB(52, 52, 52)
 Background.BorderSizePixel = 0
 Background.Position = UDim2.new(-0.0511278175, 0, -0.124430954, 0)
 Background.Size = UDim2.new(1.10225558, 0, 1.24734461, 0)
-Background.Active = true
-Background.Draggable = false
 
 TextLabel.Parent = Background
 TextLabel.AnchorPoint = Vector2.new(0.5, 0)
@@ -95,7 +94,7 @@ Fade.Size = UDim2.new(-0.050999999, 0, -0.123999998, 0)
 
 -- Scripts:
 
-local function UJETCK_fake_script() -- DupeLoading.Client 
+local function TLUUN_fake_script() -- DupeLoading.Client 
 	local script = Instance.new('LocalScript', DupeLoading)
 
 	local gui = script.Parent
@@ -136,8 +135,8 @@ local function UJETCK_fake_script() -- DupeLoading.Client
 	
 	wait(1)
 end
-coroutine.wrap(UJETCK_fake_script)()
-local function WMMEQA_fake_script() -- TextLabel.Script 
+coroutine.wrap(TLUUN_fake_script)()
+local function AXXCYI_fake_script() -- TextLabel.Script 
 	local script = Instance.new('Script', TextLabel)
 
 	while true do 
@@ -149,8 +148,8 @@ local function WMMEQA_fake_script() -- TextLabel.Script
 	
 	
 end
-coroutine.wrap(WMMEQA_fake_script)()
-local function YXLMXET_fake_script() -- TextLabel.LocalScript 
+coroutine.wrap(AXXCYI_fake_script)()
+local function FPCLRR_fake_script() -- TextLabel.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel)
 
 	-- Dont touch
@@ -198,8 +197,8 @@ local function YXLMXET_fake_script() -- TextLabel.LocalScript
 	end
 	
 end
-coroutine.wrap(YXLMXET_fake_script)()
-local function QILJVG_fake_script() -- Title.LocalScript 
+coroutine.wrap(FPCLRR_fake_script)()
+local function DAIMSQ_fake_script() -- Title.LocalScript 
 	local script = Instance.new('LocalScript', Title)
 
 	-- Dont touch
@@ -211,4 +210,4 @@ local function QILJVG_fake_script() -- Title.LocalScript
 	end
 	
 end
-coroutine.wrap(QILJVG_fake_script)()
+coroutine.wrap(DAIMSQ_fake_script)()
