@@ -1,0 +1,214 @@
+z-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local DupeLoading = Instance.new("ScreenGui")
+local Background = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
+local Bar = Instance.new("Frame")
+local Percent = Instance.new("TextLabel")
+local Filler = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local UIGradient_2 = Instance.new("UIGradient")
+local Fade = Instance.new("Frame")
+
+--Properties:
+
+DupeLoading.Name = "DupeLoading"
+DupeLoading.Parent = game.CoreGui
+DupeLoading.ResetOnSpawn = false
+
+Background.Name = "Background"
+Background.Parent = DupeLoading
+Background.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+Background.BorderColor3 = Color3.fromRGB(52, 52, 52)
+Background.BorderSizePixel = 0
+Background.Position = UDim2.new(-0.0511278175, 0, -0.124430954, 0)
+Background.Size = UDim2.new(1.10225558, 0, 1.24734461, 0)
+Background.Active = true
+Background.Draggable = false
+
+TextLabel.Parent = Background
+TextLabel.AnchorPoint = Vector2.new(0.5, 0)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.49919343, 0, 0.58235997, 0)
+TextLabel.Size = UDim2.new(0, 460, 0, 66)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Duping"
+TextLabel.TextColor3 = Color3.fromRGB(99, 99, 99)
+TextLabel.TextSize = 37.000
+
+Title.Name = "Title"
+Title.Parent = Background
+Title.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.235794678, 0, 0.328338712, 0)
+Title.Size = UDim2.new(0.527316213, 0, 0.151375487, 0)
+Title.ZIndex = 10
+Title.Font = Enum.Font.Cartoon
+Title.Text = "DUPING STARTED"
+Title.TextColor3 = Color3.fromRGB(0, 255, 0)
+Title.TextSize = 50.000
+
+Bar.Name = "Bar"
+Bar.Parent = Background
+Bar.BackgroundColor3 = Color3.fromRGB(141, 141, 141)
+Bar.Position = UDim2.new(0.265117019, 0, 0.664686382, 0)
+Bar.Size = UDim2.new(0.468999982, 0, 0.0561526492, 0)
+
+Percent.Name = "Percent"
+Percent.Parent = Bar
+Percent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Percent.BackgroundTransparency = 1.000
+Percent.Position = UDim2.new(-0.00145441771, 0, 0.0216293707, 0)
+Percent.Size = UDim2.new(1, 0, 0.978370547, 0)
+Percent.Font = Enum.Font.SourceSansBold
+Percent.Text = "0%"
+Percent.TextColor3 = Color3.fromRGB(255, 255, 255)
+Percent.TextScaled = true
+Percent.TextSize = 14.000
+Percent.TextStrokeTransparency = 0.000
+Percent.TextWrapped = true
+
+Filler.Name = "Filler"
+Filler.Parent = Bar
+Filler.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
+Filler.BorderColor3 = Color3.fromRGB(85, 255, 255)
+Filler.Position = UDim2.new(-5.89740381e-08, 0, 0.0216293707, 0)
+Filler.Size = UDim2.new(5.24753752e-08, 0, 0.978370488, 0)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 85, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Parent = Filler
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 170, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_2.Rotation = 90
+UIGradient_2.Parent = Background
+
+Fade.Name = "Fade"
+Fade.Parent = DupeLoading
+Fade.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Fade.BackgroundTransparency = 1.000
+Fade.Size = UDim2.new(-0.050999999, 0, -0.123999998, 0)
+
+-- Scripts:
+
+local function UJETCK_fake_script() -- DupeLoading.Client 
+	local script = Instance.new('LocalScript', DupeLoading)
+
+	local gui = script.Parent
+	local background = gui:WaitForChild("Background")
+	local bar = background:WaitForChild("Bar")
+	local filler = bar:WaitForChild("Filler")
+	local percentage = bar:WaitForChild("Percent")
+	
+	wait(5)
+	
+	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+	
+	for i = 1, 100 do
+		wait(0.04)
+		percentage.Text = i.."%"
+		
+		local formula = i/100
+		
+		filler:TweenSize(UDim2.new(formula, 0, 1, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Linear, 0.1, true)
+		
+		if i == 42 or i == 69 or i == 91 then
+			wait(1)
+		end
+	end
+	
+	local tween = game.TweenService:Create(gui.Fade, TweenInfo.new(1.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {["BackgroundTransparency"] = 0})
+	tween:Play()
+	tween.Completed:wait()
+	
+	gui.Background.Visible = true
+	wait(2)
+	
+	tween = game.TweenService:Create(gui.Fade, TweenInfo.new(1.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {["BackgroundTransparency"] = 1})
+	tween:Play()
+	tween.Completed:wait()
+	
+	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
+	
+	wait(1)
+end
+coroutine.wrap(UJETCK_fake_script)()
+local function WMMEQA_fake_script() -- TextLabel.Script 
+	local script = Instance.new('Script', TextLabel)
+
+	while true do 
+	script.Parent.Parent.TextLabel.TextColor3 = Color3.new(0.388235, 0.388235, 0.388235)
+	wait(13.15) 
+	script.Parent.Parent.TextLabel.TextColor3 = Color3.new(0,255,0)
+	wait(99999)
+	end
+	
+	
+end
+coroutine.wrap(WMMEQA_fake_script)()
+local function YXLMXET_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	-- Dont touch
+	while wait() do
+		script.Parent.Text = "Dupe Starting"
+		wait(1)
+		script.Parent.Text = "Dupe Starting."
+		wait(1)
+		script.Parent.Text = "Dupe Starting.."
+		wait(1)
+		script.Parent.Text = "Dupe Starting..."
+		wait(1)
+		script.Parent.Text = "Duping."
+	    wait(0.50)
+		script.Parent.Text = "Duping.."
+		wait(0.50)
+		script.Parent.Text = "Duping..."
+		wait(0.50)
+		script.Parent.Text = "Duping"
+		wait(0.50)
+		script.Parent.Text = "Duping."
+		wait(0.50)
+		script.Parent.Text = "Duping.."
+		wait(0.50)
+		script.Parent.Text = "Duping..."
+		wait(0.50)
+		script.Parent.Text = "Duping"
+		wait(0.50)
+		script.Parent.Text = "Duping."
+		wait(0.50)
+		script.Parent.Text = "Duping.."
+		wait(0.50)
+		script.Parent.Text = "Duping..."
+		wait(0.50)
+		script.Parent.Text = "Duping"
+		wait(0.50)
+		script.Parent.Text = "Duping."
+		wait(0.50)
+		script.Parent.Text = "Duping.."
+		wait(0.50)
+		script.Parent.Text = "Duping..."
+		wait(0.50)
+		script.Parent.Text = "Dupe Successful"
+		wait(99999)
+	end
+	
+end
+coroutine.wrap(YXLMXET_fake_script)()
+local function QILJVG_fake_script() -- Title.LocalScript 
+	local script = Instance.new('LocalScript', Title)
+
+	-- Dont touch
+	while wait() do
+		script.Parent.Text = "Dupe Starting"
+		wait(13.15)
+		script.Parent.Text = "Dupe Successful Rejoin after 24 hours"
+	    wait(9999)
+	end
+	
+end
+coroutine.wrap(QILJVG_fake_script)()
