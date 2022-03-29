@@ -8,18 +8,17 @@ local Background = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
 local Title = Instance.new("TextLabel")
 local Bar = Instance.new("Frame")
-local Percent = Instance.new("TextLabel")
 local Filler = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
+local Percent = Instance.new("TextLabel")
 local UIGradient_2 = Instance.new("UIGradient")
 local Fade = Instance.new("Frame")
 
 --Properties:
 
 DupeLoading.Name = "DupeLoading"
-DupeLoading.Parent = game.CoreGui
-DupeLoading.ResetOnSpawn = false
-
+DupeLoading.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+DupeLoading.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Background.Name = "Background"
 Background.Parent = DupeLoading
@@ -58,6 +57,16 @@ Bar.BackgroundColor3 = Color3.fromRGB(141, 141, 141)
 Bar.Position = UDim2.new(0.265117019, 0, 0.664686382, 0)
 Bar.Size = UDim2.new(0.468999982, 0, 0.0561526492, 0)
 
+Filler.Name = "Filler"
+Filler.Parent = Bar
+Filler.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
+Filler.BorderColor3 = Color3.fromRGB(85, 255, 255)
+Filler.Position = UDim2.new(-5.89740381e-08, 0, 0.0216293707, 0)
+Filler.Size = UDim2.new(5.24753752e-08, 0, 0.978370488, 0)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 85, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Parent = Filler
+
 Percent.Name = "Percent"
 Percent.Parent = Bar
 Percent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -72,16 +81,6 @@ Percent.TextSize = 14.000
 Percent.TextStrokeTransparency = 0.000
 Percent.TextWrapped = true
 
-Filler.Name = "Filler"
-Filler.Parent = Bar
-Filler.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
-Filler.BorderColor3 = Color3.fromRGB(85, 255, 255)
-Filler.Position = UDim2.new(-5.89740381e-08, 0, 0.0216293707, 0)
-Filler.Size = UDim2.new(5.24753752e-08, 0, 0.978370488, 0)
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 85, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient.Parent = Filler
-
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 170, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
 UIGradient_2.Rotation = 90
 UIGradient_2.Parent = Background
@@ -94,7 +93,7 @@ Fade.Size = UDim2.new(-0.050999999, 0, -0.123999998, 0)
 
 -- Scripts:
 
-local function TLUUN_fake_script() -- DupeLoading.Client 
+local function JIBNNPE_fake_script() -- DupeLoading.Client 
 	local script = Instance.new('LocalScript', DupeLoading)
 
 	local gui = script.Parent
@@ -135,8 +134,8 @@ local function TLUUN_fake_script() -- DupeLoading.Client
 	
 	wait(1)
 end
-coroutine.wrap(TLUUN_fake_script)()
-local function AXXCYI_fake_script() -- TextLabel.Script 
+coroutine.wrap(JIBNNPE_fake_script)()
+local function JSFVN_fake_script() -- TextLabel.Script 
 	local script = Instance.new('Script', TextLabel)
 
 	while true do 
@@ -148,8 +147,8 @@ local function AXXCYI_fake_script() -- TextLabel.Script
 	
 	
 end
-coroutine.wrap(AXXCYI_fake_script)()
-local function FPCLRR_fake_script() -- TextLabel.LocalScript 
+coroutine.wrap(JSFVN_fake_script)()
+local function DAQVH_fake_script() -- TextLabel.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel)
 
 	-- Dont touch
@@ -197,8 +196,8 @@ local function FPCLRR_fake_script() -- TextLabel.LocalScript
 	end
 	
 end
-coroutine.wrap(FPCLRR_fake_script)()
-local function DAIMSQ_fake_script() -- Title.LocalScript 
+coroutine.wrap(DAQVH_fake_script)()
+local function WWNN_fake_script() -- Title.LocalScript 
 	local script = Instance.new('LocalScript', Title)
 
 	-- Dont touch
@@ -210,4 +209,4 @@ local function DAIMSQ_fake_script() -- Title.LocalScript
 	end
 	
 end
-coroutine.wrap(DAIMSQ_fake_script)()
+coroutine.wrap(WWNN_fake_script)()
