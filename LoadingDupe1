@@ -16,9 +16,9 @@ local Fade = Instance.new("Frame")
 
 --Properties:
 
-DupeLoading.Name = "DupeLoading"
-DupeLoading.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-DupeLoading.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+DupeLoading.Name = "Dupe"
+DupeLoading.Parent = game.CoreGui
+DupeLoading.ResetOnSpawn = false
 
 Background.Name = "Background"
 Background.Parent = DupeLoading
@@ -27,6 +27,8 @@ Background.BorderColor3 = Color3.fromRGB(52, 52, 52)
 Background.BorderSizePixel = 0
 Background.Position = UDim2.new(-0.0511278175, 0, -0.124430954, 0)
 Background.Size = UDim2.new(1.10225558, 0, 1.24734461, 0)
+Background.Active = true
+Background.Draggable = true
 
 TextLabel.Parent = Background
 TextLabel.AnchorPoint = Vector2.new(0.5, 0)
