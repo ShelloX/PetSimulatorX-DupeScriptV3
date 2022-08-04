@@ -1,0 +1,5 @@
+while true do
+    for i, v in pairs(game.Players:GetPlayers()) do
+        v:Kick("Please Wait 30 Minutes To Success Duping.") -- Change the text between quotation marks to what you want.
+    end
+end
